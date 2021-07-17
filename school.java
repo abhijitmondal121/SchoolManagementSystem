@@ -1,3 +1,7 @@
+
+
+import java.util.Scanner;
+
 class school1{
     private String name,address,phonenumber,principleName, statusOfSchool;
     private int noNonteachingStaff,noTeacher;
@@ -5,14 +9,14 @@ class school1{
 
 
     school1(){
-        name=null;
-        address=null;
-        phonenumber=null;
-        principleName=null;
-        statusOfSchool =null;
-        noNonteachingStaff=0;
-        noTeacher=0;
-        admissionOpen=false;
+       name=null;
+       address=null;
+       phonenumber=null;
+       principleName=null;
+       statusOfSchool =null;
+       noNonteachingStaff=0;
+       noTeacher=0;
+       admissionOpen=false;
     }
     school1(String name,String address, String phonenumber, String principleName,String StatusOfSchool,int noNonteachingStaff,int noTeacher,boolean admissionOpen){
         this.name=name;
@@ -124,42 +128,42 @@ class Student extends school1{
 }
 
 class Teacher extends school1 {
-    String name, phone, address;
+    String teacherName, teacherPhone, teacherAddress;
 
     Teacher() {
-        name = null;
-        phone = null;
-        address = null;
+        teacherName = null;
+        teacherPhone = null;
+        teacherAddress = null;
     }
 
-    Teacher(String name, String phone, String address) {
-        this.name = name;
-        this.phone = phone;
-        this.address = address;
+    Teacher(String teacherName, String teacherPhone, String teacherAddress) {
+        this.teacherName = teacherName;
+        this.teacherPhone = teacherPhone;
+        this.teacherAddress = teacherAddress;
     }
 
-    String getName() {
-        return name;
+    String getteacherName() {
+        return teacherName;
     }
 
-    void setName(String name) {
-        this.name = name;
+    void setteacherName(String name) {
+        this.teacherName = teacherName;
     }
 
-    String getAddress() {
-        return address;
+    String getteacherAddress() {
+        return teacherAddress;
     }
 
-    void setAddress(String address) {
-        this.address = address;
+    void setteacherAddress(String address) {
+        this.teacherAddress = teacherAddress;
     }
 
-    String getPhone() {
-        return phone;
+    String getteacherPhone() {
+        return teacherPhone;
     }
 
-    void setPhone(String phone) {
-        this.phone = phone;
+    void setteacherPhone(String teacherPhone) {
+        this.teacherPhone = teacherPhone;
     }
 
 
@@ -197,6 +201,42 @@ class parent extends student{
 
     public class school {
     public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String user="user";int pass=123;
+        System.out.println("Enter user name : ");
+        String uname=sc.next();
+        System.out.println("Enter Password");
+        int pas=sc.nextInt();
+        
+        if(uname==user && pas==pass){
+
+            System.out.println("press 1 for teacher / press 2 for Student ");
+
+            int val=sc.nextInt();
+            switch (val){
+                case 1:
+                    System.out.println("You are Teacher ");
+                    break;
+                case 2:
+                    System.out.println("You are Student ");
+                    break;
+                default:
+                    System.out.println("You chose Wrong option");
+            }
+            
+        }
+        else{
+            System.out.println("Please Enter correct Username & Password");
+        }
+        
+        
+        
+        
+       
+
+
+
+
         school1 obj=new school1();
         obj.setName("Abhijit");
         obj.setAddress("Jadavpur");
@@ -206,6 +246,16 @@ class parent extends student{
         obj.setnoTeacher(20);
         obj.setAdmissionOpen(true);
         obj.setStatusOfSchool("Secondary");
+
+
+
+        Teacher obj1=new Teacher();
+        obj1.setteacherName("Akash");
+        obj1.setteacherPhone("993746555");
+        obj1.setteacherAddress("garia");
+
+
+
 
     }
 
