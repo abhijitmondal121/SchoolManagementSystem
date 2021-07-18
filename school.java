@@ -9,14 +9,14 @@ class school1{
 
 
     school1(){
-       name=null;
-       address=null;
-       phonenumber=null;
-       principleName=null;
-       statusOfSchool =null;
-       noNonteachingStaff=0;
-       noTeacher=0;
-       admissionOpen=false;
+        name=null;
+        address=null;
+        phonenumber=null;
+        principleName=null;
+        statusOfSchool =null;
+        noNonteachingStaff=0;
+        noTeacher=0;
+        admissionOpen=false;
     }
     school1(String name,String address, String phonenumber, String principleName,String StatusOfSchool,int noNonteachingStaff,int noTeacher,boolean admissionOpen){
         this.name=name;
@@ -86,44 +86,44 @@ class school1{
 }
 
 class Student extends school1{
-    private String name,address,phone,Clas;
+    private String studentName,studentAddress,studentPhone,studentClass;
     Student(){
-        name=null;
-        address=null;
-        phone=null;
-        Clas=null;
+        studentName=null;
+        studentAddress=null;
+        studentPhone=null;
+        studentClass=null;
     }
-    Student(String name , String address , String phone , String Clas){
-        this.name=name;
-        this.address=address;
-        this.phone=phone;
-        this.Clas=Clas;
+    Student(String studentName , String studentAddress , String studentPhone , String studentClass){
+        this.studentName=studentName;
+        this.studentAddress=studentAddress;
+        this.studentPhone=studentPhone;
+        this.studentClass=studentClass;
     }
-    String getName(){
-        return name;
+    String getstudentName(){
+        return studentName;
     }
-    void setName(String name){
-        this.name=name;
+    void setstudentName(String studentName){
+        this.studentName=studentName;
     }
-    String getAddress(){
-        return address;
+    String getstudentAddress(){
+        return studentAddress;
     }
-    void setAddress(String address){
-        this.address=address;
-    }
-
-    String getPhone(){
-        return phone;
-    }
-    void setPhone(String phone){
-        this.phone=phone;
+    void setstudentAddress(String studentAddress){
+        this.studentAddress=studentAddress;
     }
 
-    String getClas(){
-        return Clas;
+    String getstudentPhone(){
+        return studentPhone;
     }
-    void setClas(String clas){
-        this.Clas=clas;
+    void setstudentPhone(String studentPhone){
+        this.studentPhone=studentPhone;
+    }
+
+    String getstudentClass(){
+        return studentClass;
+    }
+    void setstudentClass(String studentClass){
+        this.studentClass=studentClass;
     }
 }
 
@@ -170,7 +170,7 @@ class Teacher extends school1 {
 }
 
 
-class parent extends student{
+class parent extends Student{
     private String parentName,relation;
     parent(){
         parentName=null;
@@ -199,60 +199,100 @@ class parent extends student{
 
 }
 
-    public class school {
+public class school {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-        String user="user";int pass=123;
+        String user="admin";int pass=12345;
         System.out.println("Enter user name : ");
         String uname=sc.next();
+
         System.out.println("Enter Password");
         int pas=sc.nextInt();
-        
-        if(uname==user && pas==pass){
+
+
+        if(user.equals(uname) && pas==pass){
+
+            System.out.println("Enter School name");
+            String scname =sc.next();
+            System.out.println("Enter School Address");
+            String scAddress =sc.next();
+            System.out.println("Enter School phoneNumber");
+            String scNumber =sc.next();
+            System.out.println("Enter School Principal Name");
+            String scPrincipal =sc.next();
+            System.out.println("Enter Status of School");
+            String scsos=sc.next();
+            System.out.println("Enter Number of non technical stuff ");
+            int nonts=sc.nextInt();
+            System.out.println("Enter Number of non Teacher ");
+            int not=sc.nextInt();
+            System.out.println("Enter admission open or not ");
+            boolean ado=sc.nextBoolean();
+
+
+            school1 obj=new school1(scname,scAddress,scNumber,scPrincipal,scsos,nonts,not,ado);
+            System.out.println("School Name : "+obj.getName());
+            System.out.println("School Address : "+obj.getAddress());
+            System.out.println("School PhoneNumber : "+obj.getNumber());
+            System.out.println( "School PrincipleName : "+obj.getPrincipleName());
+            System.out.println("School Status of School : "+obj.getStatusOfSchool());
+            System.out.println("School Non Teaching Stuff : "+obj.getnoNonteachingStaff());
+            System.out.println("School Teacher : "+obj.getnoTeacher());
+            System.out.println("School Get Admission Open : "+obj.getadmissionOpen());
+
+
+
+
+
+
+
 
             System.out.println("press 1 for teacher / press 2 for Student ");
-
             int val=sc.nextInt();
             switch (val){
                 case 1:
                     System.out.println("You are Teacher ");
+                    String teacherName, teacherPhone, teacherAddress;
+
+
+
+
+
                     break;
                 case 2:
                     System.out.println("You are Student ");
+                    System.out.println("Enter Student name");
+                    String studentName =sc.next();
+                    System.out.println("Enter Student Address");
+                    String studentAddress=sc.next();
+                    System.out.println("Enter Student phoneNumber");
+                    String studentPhone =sc.next();
+                    System.out.println("Enter Student Class");
+                    String studentclass =sc.next();
+                    Student obj1=new Student(studentName,studentAddress,studentPhone,studentclass);
+                    System.out.println("Student Name : "+obj1.getstudentName());
+                    System.out.println("Student Address : "+obj1.getstudentAddress());
+                    System.out.println("Student phone number : "+obj1.getstudentPhone());
+                    System.out.println("Student class : "+obj1.getstudentClass());
+
+
+
                     break;
                 default:
                     System.out.println("You chose Wrong option");
             }
-            
+
         }
         else{
             System.out.println("Please Enter correct Username & Password");
         }
-        
-        
-        
-        
-       
 
 
 
 
-        school1 obj=new school1();
-        obj.setName("Abhijit");
-        obj.setAddress("Jadavpur");
-        obj.setNumber("9946500742");
-        obj.setPrincipleName("H.M Choudhury");
-        obj.setnoNonteachingStaff(10);
-        obj.setnoTeacher(20);
-        obj.setAdmissionOpen(true);
-        obj.setStatusOfSchool("Secondary");
 
 
 
-        Teacher obj1=new Teacher();
-        obj1.setteacherName("Akash");
-        obj1.setteacherPhone("993746555");
-        obj1.setteacherAddress("garia");
 
 
 
