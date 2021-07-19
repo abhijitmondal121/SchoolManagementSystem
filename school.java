@@ -1,4 +1,9 @@
 
+//school   (base class)  ---->> schName,schAddress,schPhonenumber,schPrinciple,schStatus,schNonteachingStuf,schTeanher,schAdmission;
+//student  -->  school   --->> StsName,stdPhone,stdAddress,stdClass;
+//teacher  -->school     ---->> tName,tPhone,tAddress;
+//parent  --->student    ----->> pName,pRelation;
+
 
 import java.util.Scanner;
 
