@@ -134,19 +134,16 @@ class Student extends school1{
 
 class Teacher extends school1 {
     String teacherName, teacherPhone, teacherAddress;
-
     Teacher() {
         teacherName = null;
         teacherPhone = null;
         teacherAddress = null;
     }
-
     Teacher(String teacherName, String teacherPhone, String teacherAddress) {
         this.teacherName = teacherName;
         this.teacherPhone = teacherPhone;
         this.teacherAddress = teacherAddress;
     }
-
     String getteacherName() {
         return teacherName;
     }
@@ -170,11 +167,7 @@ class Teacher extends school1 {
     void setteacherPhone(String teacherPhone) {
         this.teacherPhone = teacherPhone;
     }
-
-
 }
-
-
 class parent extends Student{
     private String parentName,relation;
     parent(){
@@ -184,7 +177,6 @@ class parent extends Student{
     parent(String parentName,String relation){
         this.parentName=parentName;
         this.relation=relation;
-
     }
     String getParentName(){
         return parentName;
@@ -192,16 +184,12 @@ class parent extends Student{
     void setParentName(String parentName){
         this.parentName=parentName;
     }
-
     String getRelation(){
         return relation;
     }
     void setPhone(String relation){
         this.relation=relation;
     }
-
-
-
 }
 
 public class school {
@@ -210,13 +198,9 @@ public class school {
         String user="admin";int pass=12345;
         System.out.println("Enter user name : ");
         String uname=sc.next();
-
         System.out.println("Enter Password");
         int pas=sc.nextInt();
-
-
         if(user.equals(uname) && pas==pass){
-
             System.out.println("Enter School name");
             String scname =sc.next();
             System.out.println("Enter School Address");
@@ -233,8 +217,6 @@ public class school {
             int not=sc.nextInt();
             System.out.println("Enter admission open or not ");
             boolean ado=sc.nextBoolean();
-
-
             school1 obj=new school1(scname,scAddress,scNumber,scPrincipal,scsos,nonts,not,ado);
             System.out.println("School Name : "+obj.getName());
             System.out.println("School Address : "+obj.getAddress());
@@ -244,25 +226,21 @@ public class school {
             System.out.println("School Non Teaching Stuff : "+obj.getnoNonteachingStaff());
             System.out.println("School Teacher : "+obj.getnoTeacher());
             System.out.println("School Get Admission Open : "+obj.getadmissionOpen());
-
-
-
-
-
-
-
-
-            System.out.println("press 1 for teacher / press 2 for Student ");
+            System.out.println("press 1 for teacher / press 2 for Student / press 3 for parent  ");
             int val=sc.nextInt();
             switch (val){
                 case 1:
                     System.out.println("You are Teacher ");
-                    String teacherName, teacherPhone, teacherAddress;
-
-
-
-
-
+                    System.out.println("Enter Teacher Name : ");
+                    String teacherName =sc.next();
+                    System.out.println("Enter Teacher Phone : ");
+                    String teacherPhone=sc.next();
+                    System.out.println("Enter Teacher Address : ");
+                    String teacherAddress =sc.next();
+                    Teacher obj2=new Teacher(teacherName,teacherPhone,teacherAddress);
+                    System.out.println("Teacher Name : "+obj2.getteacherName());
+                    System.out.println("Teacher Phone : "+obj2.getteacherPhone());
+                    System.out.println("Teacher Address : "+obj2.getteacherAddress());
                     break;
                 case 2:
                     System.out.println("You are Student ");
@@ -279,29 +257,22 @@ public class school {
                     System.out.println("Student Address : "+obj1.getstudentAddress());
                     System.out.println("Student phone number : "+obj1.getstudentPhone());
                     System.out.println("Student class : "+obj1.getstudentClass());
-
-
-
                     break;
+                case 3:
+                    System.out.println("You are parent ");
+                    System.out.println("Enter Parent Name");
+                    String parentName =sc.next();
+                    System.out.println("Enter Parent Relation");
+                    String parentRelation=sc.next();
+                    parent obj3=new parent(parentName,parentRelation);
+                    System.out.println("Parent Name : "+obj3.getParentName());
+                    System.out.println("Parent Name : "+obj3.getRelation());
                 default:
                     System.out.println("You chose Wrong option");
             }
-
         }
         else{
             System.out.println("Please Enter correct Username & Password");
         }
-
-
-
-
-
-
-
-
-
-
-
     }
-
 }
